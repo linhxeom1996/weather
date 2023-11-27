@@ -1,4 +1,3 @@
-import 'package:injectable/injectable.dart';
 import 'package:softbase/presentation/cubits/base/base_cubit.dart';
 import 'package:softbase/presentation/cubits/home/home_state.dart';
 
@@ -20,7 +19,6 @@ class HomeCubit extends BaseCubit<HomeState> {
 
   final List<Articles> _data = [];
 
-  @factoryMethod
   Future getBreakingNewsArticles() async {
     if (isBusy) return;
     await run(() async {

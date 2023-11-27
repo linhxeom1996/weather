@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:softbase/config/routes/app_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:softbase/presentation/cubits/login/login_cubit.dart';
+import 'package:softbase/presentation/cubits/login/login_state.dart';
+import 'package:softbase/presentation/views/base/base_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState
+    extends BaseStateScreen<LoginCubit, LoginState, LoginScreen> {
+  @override
+  Widget body(BuildContext context, LoginState state) {
     return Scaffold(
       body: Center(
         child: Column(
@@ -20,7 +29,7 @@ class LoginScreen extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, ArchRouters.home);
+                  context.read<LoginCubit>().login();
                 },
                 child: const Text(
                   "Login Press",

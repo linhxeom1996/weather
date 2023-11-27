@@ -40,6 +40,7 @@ class SearchWidget extends StatelessWidget {
                   InkWell(
                       onTap: () {
                         log("tab camera");
+                        Navigator.of(context).pushNamed(ArchRouters.login);
                       },
                       child: const Icon(Icons.camera_alt))
                 ],
@@ -253,7 +254,7 @@ class __ListResultState
     }
     var history = state.recentSearch;
     if (history != null) {
-     return  _HistorySearch(history: history);
+      return _HistorySearch(history: history);
     }
     return const SizedBox(
       child: Icon(Icons.data_saver_off),

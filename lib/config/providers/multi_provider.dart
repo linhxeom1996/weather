@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:softbase/data/di/injector.dart';
+import 'package:softbase/presentation/cubits/login/login_cubit.dart';
 
 import '../../presentation/cubits/bottom/bottom_cubit.dart';
 import '../../presentation/cubits/home/home_cubit.dart';
@@ -17,7 +19,8 @@ class MultiProviderApp extends StatelessWidget {
         BlocProvider(create: (context) => ThemeCubit()),
         BlocProvider(create: (context) => BottomCubit()),
         BlocProvider(create: (context) => HomeCubit()),
-        BlocProvider(create: (context) => SearchCubit())
+        BlocProvider(create: (context) => SearchCubit()),
+        BlocProvider(create: (context) => getIt<LoginCubit>())
       ],
       child: child,
     );

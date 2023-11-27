@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:softbase/data/di/injector.dart';
+import 'package:softbase/presentation/cubits/login/login_cubit.dart';
 
 abstract class BaseStateScreen<C extends Cubit<S>, S, W extends StatefulWidget>
     extends State<W> {
@@ -31,11 +33,12 @@ abstract class BaseStateScreen<C extends Cubit<S>, S, W extends StatefulWidget>
   bool resizeToAvoidBottomInset() {
     return true;
   }
+
+  bool get isLoggedIn => getIt<LoginCubit>().state.isLoginned ?? false;
 }
 
 abstract class BaseStateWidget<C extends Cubit<S>, S, W extends StatefulWidget>
     extends State<W> {
-      
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<C, S>(
