@@ -54,16 +54,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ThemeCubit, ThemeState>(builder: (context, state) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: state.theme,
-        localizationsDelegates: context.localizationDelegates,
-        locale: context.locale,
-        supportedLocales: context.supportedLocales,
-        onGenerateRoute: (settings) => AppRouter().onGenerateRouter(settings),
-        initialRoute: ArchRouters.splash,
-      );
-    });
+    return BlocBuilder<ThemeCubit, ThemeState>(
+      builder: (context, state) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: state.theme,
+          localizationsDelegates: context.localizationDelegates,
+          locale: context.locale,
+          supportedLocales: context.supportedLocales,
+          onGenerateRoute: (settings) => AppRouter().onGenerateRouter(settings),
+          initialRoute: ArchRouters.splash,
+        );
+      },
+    );
   }
 }

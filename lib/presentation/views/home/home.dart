@@ -77,16 +77,6 @@ class _HomeScreenState
                     ),
                   )
               ],
-            ),
-            GestureDetector(
-              onTap: (){
-                log("check data 2: $isLoggedIn");
-              },
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                color: Colors.red,
-              ),
             )
           ],
         ),

@@ -56,11 +56,11 @@ dependencies:
   page_transition: ^2.0.9
   meta: ^1.9.1
 
-  # search_plugin:
-  #   path: ../search_plugin
-  #   # git:
-  #   #   url: git@bitbucket.org:maple-labs/connectsdk-provider-flutter.git
-  #   #   ref: firetv_1.0.1
+  libs_text_field:
+    path: ../libs_text_field
+    # git:
+    #   url: git@bitbucket.org:maple-labs/connectsdk-provider-flutter.git
+    #   ref: firetv_1.0.1
 
 dev_dependencies:
   flutter_test:

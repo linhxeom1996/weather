@@ -36,16 +36,14 @@ class TextFieldBase extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         if (label != null) ...[
-          // Text(label!,
-          //     style: StyleBase().defaultStyle(
-          //         size: 14,
-          //         weight: FontWeight.w600,
-          //         color: ColorBase.colorF1F)),
+          Padding(
+            padding: const EdgeInsets.only(bottom: Dimens.sp5),
+            child:
+                Text(label!, style: Theme.of(context).textTheme.headlineMedium),
+          ),
         ],
-        // const SizedBox(height: 5),
-        Container(
+        SizedBox(
           height: height,
-          // alignment: Alignment.center,
           child: TextFormField(
             focusNode: focusNode,
             controller: controller,
@@ -55,9 +53,8 @@ class TextFieldBase extends StatelessWidget {
               focusNode?.unfocus();
               onEditingComplete?.call();
             },
-            // cursorColor: ColorBase.color373,
-            // style: StyleBase().defaultStyle(
-            //     size: 14, weight: FontWeight.w400, color: ColorBase.color373),
+            cursorColor: ColorApp.black,
+            style: Theme.of(context).textTheme.bodyMedium,
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: TextStyle(
