@@ -55,6 +55,8 @@ dependencies:
   lint: ^2.1.1
   page_transition: ^2.0.9
   meta: ^1.9.1
+  barcode_widget: ^2.0.4
+  pinput: ^2.2.0
 
   libs_text_field:
     path: ../libs_text_field

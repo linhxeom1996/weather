@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:libs_text_field/libs_text_field.dart';
 import 'package:softbase/config/routes/app_router.dart';
 import 'package:softbase/presentation/cubits/search/search_cubit.dart';
 import 'package:softbase/presentation/cubits/search/search_state.dart';
@@ -8,7 +9,6 @@ import 'package:softbase/presentation/views/base/base_screen.dart';
 import 'package:softbase/presentation/widgets/list_view_base.dart';
 import '../../../utils/constains/export.dart';
 import '../../widgets/divider_base.dart';
-import '../../widgets/text_field_base.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});

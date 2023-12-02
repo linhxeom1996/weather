@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:softbase/presentation/views/auth/forgot_pass/forgot_pass.dart';
 import 'package:softbase/presentation/views/auth/login/login.dart';
+import 'package:softbase/presentation/views/auth/otp/otp.dart';
 import 'package:softbase/presentation/views/auth/register/register.dart';
 import 'package:softbase/presentation/views/bottom/bottom_view.dart';
 import 'package:softbase/presentation/views/search/search.dart';
@@ -17,6 +18,8 @@ class ArchRouters {
   static const home = "/home";
   static const search = "/search";
   static const cart = "/cart";
+  static const otpScreen = "/otp_screen";
+  static const newPassword = "/newPassword";
 }
 
 class AppRouter {
@@ -36,6 +39,10 @@ class AppRouter {
         return transitionPageRTL(child: const BottomView());
       case ArchRouters.search:
         return transitionPageBTT(child: const SearchScreen());
+      case ArchRouters.otpScreen:
+        return transitionPageRTL(child: const OTPScreen());
+      case ArchRouters.newPassword:
+        return transitionPageRTL(child: const NewPasswordScreen());
       default:
         return null;
     }

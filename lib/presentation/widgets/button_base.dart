@@ -89,3 +89,23 @@ class RadioButtonWidget extends StatelessWidget {
     );
   }
 }
+
+class TextButtonBase extends StatelessWidget {
+  final String text;
+  final TextStyle? textStyle;
+  final Function() onTab;
+  const TextButtonBase({super.key, required this.text, this.textStyle, required this.onTab});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => onTab(),
+      child: Container(
+        color: ColorApp.transparent,
+        padding: const EdgeInsets.symmetric(
+            vertical: Dimens.sp4, horizontal: Dimens.sp12),
+        child: Text(text, style: textStyle),
+      ),
+    );
+  }
+}
