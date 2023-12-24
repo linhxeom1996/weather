@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:softbase/config/routes/app_router.dart';
+import '../../data/di/injector.dart';
 import '../../utils/constains/export.dart';
+import '../cubits/login/login_cubit.dart';
 
 class ButtonBase extends StatelessWidget {
   final String? text;
@@ -94,7 +97,8 @@ class TextButtonBase extends StatelessWidget {
   final String text;
   final TextStyle? textStyle;
   final Function() onTab;
-  const TextButtonBase({super.key, required this.text, this.textStyle, required this.onTab});
+  const TextButtonBase(
+      {super.key, required this.text, this.textStyle, required this.onTab});
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +110,29 @@ class TextButtonBase extends StatelessWidget {
             vertical: Dimens.sp4, horizontal: Dimens.sp12),
         child: Text(text, style: textStyle),
       ),
+    );
+  }
+}
+
+class LoginRequiredWidget extends StatelessWidget {
+  final Function onTab;
+  final Widget child;
+  const LoginRequiredWidget(
+      {super.key, required this.onTab, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    var isLogin = getIt<LoginCubit>().state.isLoginned ?? false;
+
+    return GestureDetector(
+      onTap: () {
+        if (isLogin) {
+          onTab();
+        } else {
+          Navigator.of(context).pushNamed(ArchRouters.login);
+        }
+      },
+      child: child,
     );
   }
 }

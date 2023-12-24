@@ -48,12 +48,22 @@ class NewPasswordScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextFieldBase(hintText: "new password"),
-            SizedBox(height: Dimens.sp30),
-            TextFieldBase(hintText: "new password again"),
+            const PassTextField(hintText: "new password"),
+            const SizedBox(height: Dimens.sp30),
+            const PassTextField(hintText: "new password again"),
+            const SizedBox(height: Dimens.sp50),
+            ButtonBase(
+                onPressed: () {
+                  Navigator.of(context)
+                    ..pop()
+                    ..pop()
+                    ..pop();
+                },
+                text: "Confirm",
+                backgroundColor: ColorApp.colorB22)
           ],
         ),
       ),

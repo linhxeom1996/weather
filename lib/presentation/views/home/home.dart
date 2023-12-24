@@ -1,6 +1,4 @@
 
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +26,6 @@ class _HomeScreenState
 
   @override
   void initState() {
-    log("check data: $isLoggedIn");
     _scrollController.onScrollEndsLister(() {
       getNews();
     });

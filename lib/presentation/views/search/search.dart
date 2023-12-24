@@ -1,4 +1,6 @@
+
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:libs_text_field/libs_text_field.dart';
@@ -6,6 +8,7 @@ import 'package:softbase/config/routes/app_router.dart';
 import 'package:softbase/presentation/cubits/search/search_cubit.dart';
 import 'package:softbase/presentation/cubits/search/search_state.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
+import 'package:softbase/presentation/widgets/button_base.dart';
 import 'package:softbase/presentation/widgets/list_view_base.dart';
 import '../../../utils/constains/export.dart';
 import '../../widgets/divider_base.dart';
@@ -39,8 +42,6 @@ class SearchWidget extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () {
-                        log("tab camera");
-                        Navigator.of(context).pushNamed(ArchRouters.login);
                       },
                       child: const Icon(Icons.camera_alt))
                 ],
@@ -48,24 +49,29 @@ class SearchWidget extends StatelessWidget {
             ),
           ),
         ),
-        Stack(
-          alignment: Alignment.topRight,
-          children: [
-            Container(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: Dimens.sp10, vertical: Dimens.sp8),
-                child: const Icon(Icons.shopping_cart, color: Colors.black)),
-            Container(
-              padding: const EdgeInsets.all(2),
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: Colors.red),
-              child: const Text(
-                "12",
-                style: TextStyle(color: Colors.white, fontSize: 12),
-              ),
-            )
-          ],
-        )
+        LoginRequiredWidget(
+            onTab: () {
+              log("go to cart");
+            },
+            child: Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: Dimens.sp10, vertical: Dimens.sp8),
+                    child:
+                        const Icon(Icons.shopping_cart, color: Colors.black)),
+                Container(
+                  padding: const EdgeInsets.all(2),
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.red),
+                  child: const Text(
+                    "12",
+                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  ),
+                )
+              ],
+            ))
       ],
     );
   }
