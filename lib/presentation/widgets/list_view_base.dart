@@ -99,11 +99,11 @@ class GridViewBase extends StatelessWidget {
   }
 }
 
-class CusScrollViewBase extends StatelessWidget {
+class CustomScrollViewBase extends StatelessWidget {
   final ScrollController? controller;
   final List<Widget> slivers;
   final bool? expanded;
-  const CusScrollViewBase(
+  const CustomScrollViewBase(
       {super.key, this.controller, required this.slivers, this.expanded});
 
   @override
@@ -131,5 +131,19 @@ class OverScrollCus extends ScrollBehavior {
   Widget buildOverscrollIndicator(
       BuildContext context, Widget child, ScrollableDetails details) {
     return child;
+  }
+}
+
+class ScrollViewBase extends StatelessWidget {
+  final Widget child;
+  const ScrollViewBase({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScrollConfiguration(
+        behavior: OverScrollCus(),
+        child: SingleChildScrollView(
+          child: child,
+        ));
   }
 }

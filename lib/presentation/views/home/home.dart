@@ -58,7 +58,7 @@ class _HomeScreenState
         child: Column(
           children: <Widget>[
             const SearchWidget(),
-            CusScrollViewBase(
+            CustomScrollViewBase(
               controller: _scrollController,
               slivers: [
                 SliverList(

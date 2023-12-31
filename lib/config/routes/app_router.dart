@@ -40,7 +40,8 @@ class AppRouter {
       case ArchRouters.search:
         return transitionPageBTT(child: const SearchScreen());
       case ArchRouters.otpScreen:
-        return transitionPageRTL(child: const OTPScreen());
+        return transitionPageRTL(
+            child: const OTPScreen(), settings: routeSettings);
       case ArchRouters.newPassword:
         return transitionPageRTL(child: const NewPasswordScreen());
       default:

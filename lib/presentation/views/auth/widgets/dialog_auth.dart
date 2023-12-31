@@ -18,11 +18,122 @@ class DialogAuth {
                 const Text("Email or password incorrect"),
                 ButtonBase(
                   onPressed: () {
-                    Navigator.of(context, rootNavigator: true).pop();
+                    Navigator.of(context).pop();
                   },
                   text: "Ok",
                   backgroundColor: ColorApp.red,
-                  padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+
+  Future registerSuccess(BuildContext context) async {
+    return DialogBase().create(context,
+        child: Dialog(
+          child: Container(
+            color: ColorApp.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Text("Register sucess"),
+                const SizedBox(height: Dimens.sp10),
+                ButtonBase(
+                  onPressed: () {
+                    Navigator.of(context)
+                      ..pop()
+                      ..pop()
+                      ..pop();
+                  },
+                  text: "Ok",
+                  backgroundColor: ColorApp.red,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+
+  Future registerFailed(BuildContext context) async {
+    return DialogBase().create(context,
+        child: Dialog(
+          child: Container(
+            color: ColorApp.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Text("Register failed"),
+                const SizedBox(height: Dimens.sp10),
+                ButtonBase(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  text: "Ok",
+                  backgroundColor: ColorApp.red,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+
+  Future changePassSuccess(BuildContext context) async {
+    return DialogBase().create(context,
+        child: Dialog(
+          child: Container(
+            color: ColorApp.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Text("Change password success"),
+                const SizedBox(height: Dimens.sp10),
+                ButtonBase(
+                  onPressed: () {
+                    Navigator.of(context)
+                      ..pop()
+                      ..pop()
+                      ..pop()
+                      ..pop();
+                  },
+                  text: "Ok",
+                  backgroundColor: ColorApp.red,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+
+  Future changePassFailed(BuildContext context) async {
+    return DialogBase().create(context,
+        child: Dialog(
+          child: Container(
+            color: ColorApp.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const Text("Change password failed"),
+                const SizedBox(height: Dimens.sp10),
+                ButtonBase(
+                  onPressed: () {
+                    Navigator.of(context)
+                      ..pop()
+                      ..pop()
+                      ..pop();
+                  },
+                  text: "Ok",
+                  backgroundColor: ColorApp.red,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
                 )
               ],
             ),

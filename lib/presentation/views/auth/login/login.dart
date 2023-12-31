@@ -7,6 +7,7 @@ import 'package:softbase/presentation/views/auth/widgets/dialog_auth.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
 import 'package:softbase/presentation/widgets/button_base.dart';
 import 'package:softbase/presentation/widgets/list_view_base.dart';
+import 'package:softbase/utils/extensions/keyboard_dectect.dart';
 
 import '../../../../utils/constains/export.dart';
 
@@ -20,6 +21,22 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState
     extends BaseStateScreen<LoginCubit, LoginState, LoginScreen> {
   final TextEditingController userNameController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+  }
 
   @override
   Widget body(BuildContext context, LoginState state) {
@@ -37,9 +54,11 @@ class _LoginScreenState
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: sizeScreen.height / 4),
-                PhoneTextField(controller: userNameController),
+                PhoneTextField(
+                    controller: userNameController),
                 const SizedBox(height: Dimens.sp30),
-                const PassTextField(hintText: "Password"),
+                const PassTextField(
+                    hintText: "Password"),
                 const SizedBox(height: Dimens.sp5),
                 Container(
                   alignment: Alignment.centerRight,
@@ -47,6 +66,7 @@ class _LoginScreenState
                   child: TextButtonBase(
                     text: "Forgot password?",
                     onTab: () {
+                      KeyboardDetect().unfocusKeyboard();
                       Navigator.of(context).pushNamed(ArchRouters.forgotScreen);
                     },
                   ),
@@ -54,6 +74,7 @@ class _LoginScreenState
                 const SizedBox(height: Dimens.sp30),
                 ButtonBase(
                     onPressed: () {
+                      KeyboardDetect().unfocusKeyboard();
                       DialogAuth().loginFailed(context);
                     },
                     text: "Login Pressed",
@@ -61,6 +82,7 @@ class _LoginScreenState
                 SizedBox(height: sizeScreen.height / 4),
                 GestureDetector(
                   onTap: () {
+                    KeyboardDetect().unfocusKeyboard();
                     Navigator.of(context).pushNamed(ArchRouters.register);
                   },
                   child: RichText(
@@ -83,4 +105,6 @@ class _LoginScreenState
       ),
     );
   }
+
+  
 }
