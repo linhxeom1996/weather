@@ -1,0 +1,13 @@
+{
+  "free_ads_flow": false,
+  "enable_limitation_badge": true,
+  "ad_limit_config": {
+    "limitPerDay": 12,
+    "limitPerSession": 2,
+    "limitedEventLimit": 3,
+    "normalPerDay": 12,
+    "normalPerSession": 5,
+    "normalEventLimit": 6,
+    "viewEventLimit": 8
+  }
+}

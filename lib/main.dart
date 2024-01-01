@@ -12,6 +12,7 @@ import 'package:softbase/presentation/cubits/theme/theme_state.dart';
 
 import 'config/providers/multi_provider.dart';
 import 'config/routes/app_router.dart';
+import 'data/datasources/firebase/remote_config/remote_config_manager.dart';
 
 void main() {
   runZonedGuarded(() async {
@@ -25,6 +26,7 @@ void main() {
     await configureDependencies();
 
     await getIt.get<LocalStorage>().init();
+    await getIt<RemoteConfigService>().fetch();
 
     runApp(EasyLocalization(
         supportedLocales: const [

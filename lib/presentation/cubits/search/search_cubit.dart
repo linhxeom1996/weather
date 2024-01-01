@@ -3,16 +3,15 @@ import 'package:softbase/data/di/injector.dart';
 import 'package:softbase/presentation/cubits/base/base_cubit.dart';
 import 'package:softbase/presentation/cubits/search/search_state.dart';
 
-import '../../../domain/models/reponses/articles.dart';
 
 class SearchCubit extends BaseCubit<SearchState> {
   SearchCubit() : super(const SearchInit());
 
-  List<Articles> _listData = [];
+  // List<Articles> _listData = [];
 
-  set listData(List<Articles> list) {
-    _listData = list;
-  }
+  // set listData(List<Articles> list) {
+  //   _listData = list;
+  // }
 
   final _localStorage = getIt.get<LocalStorage>();
 
@@ -20,17 +19,17 @@ class SearchCubit extends BaseCubit<SearchState> {
     if (text == "") {
       getHistorySearch();
     } else {
-      if (_listData.isNotEmpty) {
-        var result = _listData.where((e) {
-          if (e.title != null) {
-            return e.title!.toLowerCase().contains(text!.toLowerCase());
-          }
-          return false;
-        }).toList();
-        emit(SearchResultState(resultSearch: result));
-      } else {
-        emit(const SearchResultState(resultSearch: []));
-      }
+      // if (_listData.isNotEmpty) {
+      //   var result = _listData.where((e) {
+      //     if (e.title != null) {
+      //       return e.title!.toLowerCase().contains(text!.toLowerCase());
+      //     }
+      //     return false;
+      //   }).toList();
+      //   emit(SearchResultState(resultSearch: result));
+      // } else {
+      //   emit(const SearchResultState(resultSearch: []));
+      // }
     }
   }
 

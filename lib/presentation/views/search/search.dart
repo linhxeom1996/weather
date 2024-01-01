@@ -211,53 +211,53 @@ class __ListResultState
 
   @override
   Widget body(BuildContext context, state) {
-    var resutlSearch = state.resultSearch;
-    if (resutlSearch != null && resutlSearch.isNotEmpty) {
-      return ListViewBase(
-          itemCount: resutlSearch.length,
-          expanded: true,
-          builder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                context
-                    .read<SearchCubit>()
-                    .saveHistorySearch(resutlSearch[index].title ?? "");
-              },
-              child: Container(
-                color: ColorApp.transparent,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: Dimens.sp15, vertical: Dimens.sp7),
-                      child: Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Text(
-                                resutlSearch[index].title ?? "Title empty",
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: Dimens.sp14,
-                                    overflow: TextOverflow.ellipsis)),
-                          ),
-                          const SizedBox(width: Dimens.sp20),
-                          Container(
-                            width: Dimens.sp30,
-                            height: Dimens.sp30,
-                            color: Colors.red,
-                          )
-                        ],
-                      ),
-                    ),
-                    index == resutlSearch.length - 1
-                        ? Container()
-                        : const DividerBase()
-                  ],
-                ),
-              ),
-            );
-          });
-    }
+    // var resutlSearch = state.resultSearch;
+    // if (resutlSearch != null && resutlSearch.isNotEmpty) {
+    //   return ListViewBase(
+    //       itemCount: resutlSearch.length,
+    //       expanded: true,
+    //       builder: (context, index) {
+    //         return GestureDetector(
+    //           onTap: () {
+    //             context
+    //                 .read<SearchCubit>()
+    //                 .saveHistorySearch(resutlSearch[index].title ?? "");
+    //           },
+    //           child: Container(
+    //             color: ColorApp.transparent,
+    //             child: Column(
+    //               children: [
+    //                 Padding(
+    //                   padding: const EdgeInsets.symmetric(
+    //                       horizontal: Dimens.sp15, vertical: Dimens.sp7),
+    //                   child: Row(
+    //                     children: <Widget>[
+    //                       Expanded(
+    //                         child: Text(
+    //                             resutlSearch[index].title ?? "Title empty",
+    //                             style: const TextStyle(
+    //                                 color: Colors.black,
+    //                                 fontSize: Dimens.sp14,
+    //                                 overflow: TextOverflow.ellipsis)),
+    //                       ),
+    //                       const SizedBox(width: Dimens.sp20),
+    //                       Container(
+    //                         width: Dimens.sp30,
+    //                         height: Dimens.sp30,
+    //                         color: Colors.red,
+    //                       )
+    //                     ],
+    //                   ),
+    //                 ),
+    //                 index == resutlSearch.length - 1
+    //                     ? Container()
+    //                     : const DividerBase()
+    //               ],
+    //             ),
+    //           ),
+    //         );
+    //       });
+    // }
     var history = state.recentSearch;
     if (history != null) {
       return _HistorySearch(history: history);

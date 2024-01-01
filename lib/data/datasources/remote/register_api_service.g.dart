@@ -12,9 +12,7 @@ class _RegisterApiService implements RegisterApiService {
   _RegisterApiService(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'https://newsapi.org/v2';
-  }
+  });
 
   final Dio _dio;
 

@@ -1,14 +1,13 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:softbase/domain/models/reponses/articles.dart';
 
 @CopyWith()
 abstract class SearchState extends Equatable {
-  final List<Articles>? resultSearch;
+  // final List<Articles>? resultSearch;
   final List<String>? recentSearch;
-  const SearchState({this.resultSearch = const [], this.recentSearch});
+  const SearchState({ this.recentSearch});
   @override
-  List<Object?> get props => [resultSearch, recentSearch];
+  List<Object?> get props => [ recentSearch];
 }
 
 class SearchInit extends SearchState {
@@ -16,5 +15,5 @@ class SearchInit extends SearchState {
 }
 
 class SearchResultState extends SearchState {
-  const SearchResultState({super.resultSearch});
+  const SearchResultState();
 }

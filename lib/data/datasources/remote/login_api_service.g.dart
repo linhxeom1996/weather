@@ -12,9 +12,7 @@ class _LoginApiService implements LoginApiService {
   _LoginApiService(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'https://newsapi.org/v2';
-  }
+  });
 
   final Dio _dio;
 
