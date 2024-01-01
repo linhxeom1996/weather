@@ -9,6 +9,8 @@ abstract class ApiRepository {
   Future<DataState<BreakingNewsReponse>> getBreakingNewsArticles(
       {required BreakingNewsRequest request});
 
-  Future<DataState<LoginReponse>> loginUser(
-      {required LoginRequest request});
+  Future<DataState<LoginReponse>> loginUser({required LoginRequest request});
+
+  Future<DataState<RegisterReponse>> createUser(
+      {required SignUpRequest request});
 }

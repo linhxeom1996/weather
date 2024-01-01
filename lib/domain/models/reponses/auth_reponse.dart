@@ -12,6 +12,14 @@ class RegisterReponse extends Equatable {
 
   @override
   bool get stringify => true;
+
+  factory RegisterReponse.fromMap(Map<String, dynamic> map) {
+    return RegisterReponse(
+        status: map['status'] != null
+            ? StatusResponse.fromJson(map['status'])
+            : null,
+        data: map['data'] != null ? DataUser.fromJson(map['data']) : null);
+  }
 }
 
 class DataUser {
@@ -73,8 +81,6 @@ class LoginReponse extends Equatable {
         status: map['status'] != null
             ? StatusResponse.fromJson(map['status'])
             : null,
-        data: map['data'] != null
-            ? DataUser.fromJson(map['data'])
-            : null);
+        data: map['data'] != null ? DataUser.fromJson(map['data']) : null);
   }
 }

@@ -1,10 +1,10 @@
-class RegisterUserRequest {
+class SignUpRequest {
   final String firstname;
   final String lastname;
   final String email;
   final String username;
   final String password;
-  RegisterUserRequest(
+  SignUpRequest(
       {required this.email,
       required this.firstname,
       required this.lastname,

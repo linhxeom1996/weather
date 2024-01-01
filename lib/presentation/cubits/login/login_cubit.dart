@@ -41,7 +41,7 @@ class LoginCubit extends BaseCubit<LoginState> {
           getIt.registerSingleton<DataUser>(reponse.data!.data!);
           emit(state.copyWith());
         }
-      }
+      } else if (reponse is DataFailed) {}
     });
   }
 }
