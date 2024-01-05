@@ -1,13 +1,12 @@
 {
   "free_ads_flow": false,
   "enable_limitation_badge": true,
-  "ad_limit_config": {
-    "limitPerDay": 12,
-    "limitPerSession": 2,
-    "limitedEventLimit": 3,
-    "normalPerDay": 12,
-    "normalPerSession": 5,
-    "normalEventLimit": 6,
-    "viewEventLimit": 8
-  }
+  "subscription_option": {},
+  "on_show_ads": true,
+  "count_session": 2,
+  "id_ads": [
+    "com.tvcast.chromecast.subscription.weekly",
+    "com.tvcast.chromecast.subscription.weeklyh",
+    "com.tvcast.chromecast.subscription.monthly"
+  ]
 }

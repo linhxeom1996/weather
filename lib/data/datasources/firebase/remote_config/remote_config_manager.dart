@@ -33,6 +33,14 @@ class RemoteConfigService {
       defaults[onShowAds] = json.encode(defaults[onShowAds]);
     }
 
+    if (defaults.containsKey(countSession)) {
+      defaults[countSession] = json.encode(defaults[countSession]);
+    }
+
+    if (defaults.containsKey(idAds)) {
+      defaults[idAds] = json.encode(defaults[idAds]);
+    }
+
     await config.setDefaults(defaults);
     await config.setConfigSettings(RemoteConfigSettings(
         fetchTimeout: const Duration(seconds: 10),

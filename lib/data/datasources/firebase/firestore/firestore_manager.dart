@@ -10,7 +10,7 @@ abstract class FireStoreManager {
 @Singleton(as: FireStoreManager)
 class FireStoreManagerImpl extends FireStoreManager {
   final CollectionReference _collection =
-      FirebaseFirestore.instance.collection('');
+      FirebaseFirestore.instance.collection('user');
 
   @override
   Future addData({String? name}) {

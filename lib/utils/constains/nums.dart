@@ -1,1 +1,0 @@
-const int defautPageSize = 20;
