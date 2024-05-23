@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:libs_message/libs_message.dart';
 import 'package:softbase/presentation/cubits/home/home_cubit.dart';
 import 'package:softbase/presentation/cubits/home/home_state.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
@@ -28,6 +27,6 @@ class _HomeScreenState
 
   @override
   Widget body(BuildContext context, state) {
-    return const Center(child: MessagePage());
+    return const Center();
   }
 }
