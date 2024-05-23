@@ -1,6 +1,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:softbase/domain/models/enums/password_type.dart';
+
+import '../../../domain/enums/password_type.dart';
 
 part 'login_state.g.dart';
 

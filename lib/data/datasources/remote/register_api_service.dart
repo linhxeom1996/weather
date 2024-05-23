@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:softbase/domain/models/reponses/auth_reponse.dart';
+
+import '../../../domain/reponses/auth_reponse.dart';
 
 part 'register_api_service.g.dart';
 

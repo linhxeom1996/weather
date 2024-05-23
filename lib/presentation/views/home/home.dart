@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:libs_message/libs_message.dart';
 import 'package:softbase/presentation/cubits/home/home_cubit.dart';
 import 'package:softbase/presentation/cubits/home/home_state.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
-import 'package:softbase/utils/constains/export.dart';
-import 'package:softbase/utils/extensions/scroll_controller_extensions.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,9 +17,6 @@ class _HomeScreenState
 
   @override
   void initState() {
-    _scrollController.onScrollEndsLister(() {
-      // getNews();
-    });
     super.initState();
   }
 
@@ -32,15 +28,6 @@ class _HomeScreenState
 
   @override
   Widget body(BuildContext context, state) {
-    return const Center(child: Icon(Icons.home, color: ColorApp.black));
+    return const Center(child: MessagePage());
   }
-
-  // Future getNews() async {
-  //   final homeCubit = BlocProvider.of<HomeCubit>(context);
-  //   await homeCubit.getBreakingNewsArticles();
-  // }
-
-  // setListSearch(HomeState state) {
-  //   BlocProvider.of<SearchCubit>(context).listData = state.articles ?? [];
-  // }
 }

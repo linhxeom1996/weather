@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:softbase/config/routes/app_router.dart';
 
-import '../../../domain/models/views/intro/intro_model.dart';
+import '../../../domain/views/intro/intro_model.dart';
 import '../../../utils/constains/export.dart';
 import '../../widgets/button_base.dart';
 import '../../widgets/image_widget.dart';

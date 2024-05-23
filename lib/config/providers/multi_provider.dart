@@ -20,7 +20,7 @@ class MultiProviderApp extends StatelessWidget {
         BlocProvider(create: (context) => BottomCubit()),
         BlocProvider(create: (context) => HomeCubit()),
         BlocProvider(create: (context) => SearchCubit()),
-        BlocProvider(create: (context) => getIt<LoginCubit>())
+        BlocProvider(create: (context) => getIt<LoginCubit>()),
       ],
       child: child,
     );

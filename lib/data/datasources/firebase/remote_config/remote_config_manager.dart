@@ -5,7 +5,8 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../domain/models/remote_config/remote_config_model.dart';
+import '../../../../domain/remote_config/remote_config_model.dart';
+
 
 const String tag = "RemoteConfigService";
 

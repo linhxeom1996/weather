@@ -5,8 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:softbase/data/datasources/remote/login_api_service.dart';
 import 'package:softbase/data/datasources/remote/register_api_service.dart';
 import 'package:softbase/data/di/injector.config.dart';
-import 'package:softbase/data/repositories/api_repository_impl.dart';
-import 'package:softbase/domain/repositories/api_repository.dart';
+import 'package:softbase/data/repositories/network/api_repository_impl.dart';
 
 import '../../utils/validations/user_validation.dart';
 

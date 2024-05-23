@@ -1,10 +1,10 @@
-import 'package:softbase/domain/models/requests/auth_request.dart';
 import 'package:softbase/presentation/cubits/base/base_cubit.dart';
 import 'package:softbase/presentation/cubits/register/register_state.dart';
 import 'package:softbase/utils/resources/data_state.dart';
 
 import '../../../data/di/injector.dart';
-import '../../../domain/repositories/api_repository.dart';
+import '../../../data/repositories/network/api_repository_impl.dart';
+import '../../../domain/requests/auth_request.dart';
 import '../../../utils/validations/user_validation.dart';
 
 class RegisterCubit extends BaseCubit<RegisterState> {

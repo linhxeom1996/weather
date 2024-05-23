@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:softbase/domain/models/reponses/status_reponse.dart';
+import 'package:softbase/domain/reponses/status_reponse.dart';
 
 class RegisterReponse extends Equatable {
   final StatusResponse? status;

@@ -1,4 +1,4 @@
-import '../../domain/models/enums/password_type.dart';
+import '../../domain/enums/password_type.dart';
 
 class UserValidate {
   bool emailValid(String email) {

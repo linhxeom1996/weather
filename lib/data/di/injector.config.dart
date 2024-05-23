@@ -14,7 +14,7 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../../presentation/cubits/login/login_cubit.dart' as _i6;
 import '../datasources/firebase/events/analytic_events.dart' as _i3;
-import '../datasources/firebase/firestore/firestore_manager.dart' as _i4;
+import '../repositories/firestore/firestore_manager.dart' as _i4;
 import '../datasources/firebase/remote_config/remote_config_manager.dart'
     as _i7;
 import '../datasources/local/local_storage.dart' as _i5;
