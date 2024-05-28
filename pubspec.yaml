@@ -59,6 +59,9 @@ dependencies:
   barcode_widget: ^2.0.4
   pinput: ^2.2.0
   audio_video_progress_bar: ^1.0.1
+  rxdart: ^0.27.4
+  gradient_like_css: ^1.0.1
+
 
   libs_text_field:
     path: ../libs_text_field
@@ -66,8 +69,8 @@ dependencies:
     #   url: git@bitbucket.org:maple-labs/connectsdk-provider-flutter.git
     #   ref: firetv_1.0.1
 
-  libs_message:
-    path: libs_message
+  # libs_message:
+  #   path: libs_message
     # git:
     #   url: git@bitbucket.org:maple-labs/connectsdk-provider-flutter.git
     #   ref: firetv_1.0.1

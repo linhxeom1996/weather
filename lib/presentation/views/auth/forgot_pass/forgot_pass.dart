@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:libs_text_field/libs_text_field.dart';
-import 'package:softbase/config/routes/app_router.dart';
+import 'package:softbase/app_router.dart';
 import 'package:softbase/presentation/views/auth/otp/otp.dart';
 import 'package:softbase/presentation/views/auth/widgets/dialog_auth.dart';
 import 'package:softbase/presentation/widgets/button_base.dart';
@@ -19,12 +19,12 @@ class ForgotScreen extends StatelessWidget {
       body: Container(
           width: double.infinity,
           height: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20),
+          padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const TextFieldBase(hintText: "Email/phone"),
-              const SizedBox(height: Dimens.sp50),
+              const SizedBox(height: Dimens.spacing50),
               ButtonBase(
                   onPressed: () {
                     Navigator.of(context).pushNamed(ArchRouters.otpScreen,
@@ -50,14 +50,14 @@ class NewPasswordScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20),
+        padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const PassTextField(hintText: "new password"),
-            const SizedBox(height: Dimens.sp30),
+            const SizedBox(height: Dimens.spacing30),
             const PassTextField(hintText: "new password again"),
-            const SizedBox(height: Dimens.sp50),
+            const SizedBox(height: Dimens.spacing50),
             ButtonBase(
                 onPressed: () {
                   DialogAuth().changePassFailed(context);

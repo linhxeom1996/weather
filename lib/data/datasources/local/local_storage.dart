@@ -5,6 +5,10 @@ import 'package:path_provider/path_provider.dart';
 abstract class LocalStorage {
   Future<void> init();
 
+  bool? get isDarkMode;
+
+  Future<bool> setDarkMode(bool isDarkMode);
+
   bool get isFirstOpen;
 
   void setIsFirstOpen();
@@ -16,6 +20,7 @@ abstract class LocalStorage {
 
 @Singleton(as: LocalStorage)
 class LocalStorageImpl extends LocalStorage {
+  static const _kDarkMode = "kDarkMode";
   static const _kPrefBoxName = 'kPrefBoxName';
   static const _isFirstOpen = 'isFirstOpen';
   static const _historySearch = "historySearch";
@@ -44,5 +49,14 @@ class LocalStorageImpl extends LocalStorage {
   @override
   void setHistorySearch(List<String> list) {
     box?.put(_historySearch, list);
+  }
+
+  @override
+  bool? get isDarkMode => box?.get(_kDarkMode);
+
+  @override
+  Future<bool> setDarkMode(bool isDarkMode) async {
+    await box?.put(_kDarkMode, isDarkMode);
+    return isDarkMode;
   }
 }

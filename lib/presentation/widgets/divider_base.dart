@@ -10,7 +10,7 @@ class DividerBase extends StatelessWidget {
   Widget build(BuildContext context) {
     return Divider(
       color: ColorApp.black.withOpacity(0.5),
-      height: Dimens.sp1,
+      height: Dimens.spacing2,
       thickness: 0.5,
       indent: indent ?? 0,
       endIndent: endIndent ?? 0,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:softbase/presentation/cubits/home/home_cubit.dart';
-import 'package:softbase/presentation/cubits/home/home_state.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
+
+import 'home_cubit.dart';
+import 'home_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState
-    extends BaseStateScreen<HomeCubit, HomeState, HomeScreen> {
+    extends BaseStateWidget<HomeCubit, HomeState, HomeScreen> {
   final _scrollController = ScrollController();
 
   @override

@@ -1,7 +1,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../domain/enums/password_type.dart';
+import '../../../../domain/enums/password_type.dart';
 
 part 'login_state.g.dart';
 
@@ -25,13 +25,3 @@ part 'login_state.g.dart';
       this.loginSuccess,
       this.loginFailed, this.phoneValid});
 }
-
-// class InitLoginState extends LoginState {}
-
-// class SuccessLoginState extends LoginState {
-//   const SuccessLoginState({super.isLoginned});
-// }
-
-// class FailedLoginState extends LoginState {
-//   const FailedLoginState({super.isLoginned});
-// }

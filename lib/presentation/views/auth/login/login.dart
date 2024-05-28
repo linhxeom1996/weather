@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:libs_text_field/libs_text_field.dart';
-import 'package:softbase/config/routes/app_router.dart';
-import 'package:softbase/presentation/cubits/login/login_cubit.dart';
-import 'package:softbase/presentation/cubits/login/login_state.dart';
+import 'package:softbase/app_router.dart';
 import 'package:softbase/presentation/views/auth/widgets/dialog_auth.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
 import 'package:softbase/presentation/widgets/button_base.dart';
@@ -10,6 +8,8 @@ import 'package:softbase/presentation/widgets/list_view_base.dart';
 import 'package:softbase/utils/extensions/keyboard_dectect.dart';
 
 import '../../../../utils/constains/export.dart';
+import 'login_cubit.dart';
+import 'login_state.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -46,7 +46,7 @@ class _LoginScreenState
         title: const Text("Login Page"),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20),
+        padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing20),
         child: ScrollConfiguration(
           behavior: OverScrollCus(),
           child: SingleChildScrollView(
@@ -56,10 +56,10 @@ class _LoginScreenState
                 SizedBox(height: sizeScreen.height / 4),
                 PhoneTextField(
                     controller: userNameController),
-                const SizedBox(height: Dimens.sp30),
+                const SizedBox(height: Dimens.spacing30),
                 const PassTextField(
                     hintText: "Password"),
-                const SizedBox(height: Dimens.sp5),
+                const SizedBox(height: Dimens.spacing5),
                 Container(
                   alignment: Alignment.centerRight,
                   width: double.infinity,
@@ -71,7 +71,7 @@ class _LoginScreenState
                     },
                   ),
                 ),
-                const SizedBox(height: Dimens.sp30),
+                const SizedBox(height: Dimens.spacing30),
                 ButtonBase(
                     onPressed: () {
                       KeyboardDetect().unfocusKeyboard();

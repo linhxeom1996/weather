@@ -1,13 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:softbase/data/datasources/local/local_storage.dart';
 import 'package:softbase/data/di/injector.dart';
-import 'package:softbase/presentation/cubits/home/home_cubit.dart';
 import 'package:softbase/utils/constains/dimens.dart';
 
-import '../../../config/routes/app_router.dart';
+import '../../../app_router.dart';
 import '../../../utils/constains/colors.dart';
 import '../../../utils/constains/icon.dart';
 import '../../widgets/image_widget.dart';
@@ -54,12 +52,12 @@ class _SplashPageState extends State<SplashPage> {
             ),
           ),
           Container(
-            height: Dimens.sp5,
+            height: Dimens.spacing5,
             width: Dimens().size(context).width / 3,
-            margin: const EdgeInsets.only(bottom: Dimens.sp20),
+            margin: const EdgeInsets.only(bottom: Dimens.spacing20),
             decoration: BoxDecoration(
                 color: ColorApp.black,
-                borderRadius: BorderRadius.circular(Dimens.sp24)),
+                borderRadius: BorderRadius.circular(Dimens.spacing24)),
           )
         ],
       )),
@@ -68,8 +66,6 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<bool> fetchInitData() async {
     //fetch init data for app
-    final homeCubit = BlocProvider.of<HomeCubit>(context);
-    await homeCubit.getBreakingNewsArticles();
     return true;
   }
 }

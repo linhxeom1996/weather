@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:softbase/config/routes/app_router.dart';
+import 'package:softbase/app_router.dart';
 import 'package:softbase/presentation/views/auth/otp/widgets/pinput_widget.dart';
 import 'package:softbase/presentation/widgets/button_base.dart';
 

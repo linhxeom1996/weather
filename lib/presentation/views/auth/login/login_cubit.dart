@@ -1,13 +1,13 @@
 import 'package:injectable/injectable.dart';
-import 'package:softbase/presentation/cubits/base/base_cubit.dart';
-import 'package:softbase/presentation/cubits/login/login_state.dart';
+import 'package:softbase/presentation/views/base/base_cubit.dart';
 import 'package:softbase/utils/resources/data_state.dart';
 import 'package:softbase/utils/validations/user_validation.dart';
 
-import '../../../data/di/injector.dart';
-import '../../../data/repositories/network/api_repository_impl.dart';
-import '../../../domain/reponses/auth_reponse.dart';
-import '../../../domain/requests/auth_request.dart';
+import '../../../../data/di/injector.dart';
+import '../../../../data/repositories/network/api_repository_impl.dart';
+import '../../../../domain/reponses/auth_reponse.dart';
+import '../../../../domain/requests/auth_request.dart';
+import 'login_state.dart';
 
 @singleton
 class LoginCubit extends BaseCubit<LoginState> {

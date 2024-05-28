@@ -1,8 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:softbase/data/datasources/local/local_storage.dart';
+import 'package:softbase/data/di/injector.dart';
 
 abstract class BaseCubit<S> extends Cubit<S> {
   BaseCubit(S initialState) : super(initialState);
 
+  LocalStorage get localStorage => getIt.get<LocalStorage>();
 
   bool _isBusy = false;
   bool get isBusy => _isBusy;

@@ -14,7 +14,7 @@ class DialogAuth {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const Text("Login failed"),
-                const SizedBox(height: Dimens.sp10),
+                const SizedBox(height: Dimens.spacing10),
                 const Text("Email or password incorrect"),
                 ButtonBase(
                   onPressed: () {
@@ -23,7 +23,7 @@ class DialogAuth {
                   text: "Ok",
                   backgroundColor: ColorApp.red,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                      horizontal: Dimens.spacing20, vertical: Dimens.spacing10),
                 )
               ],
             ),
@@ -40,7 +40,7 @@ class DialogAuth {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const Text("Register sucess"),
-                const SizedBox(height: Dimens.sp10),
+                const SizedBox(height: Dimens.spacing10),
                 ButtonBase(
                   onPressed: () {
                     Navigator.of(context)
@@ -51,7 +51,7 @@ class DialogAuth {
                   text: "Ok",
                   backgroundColor: ColorApp.red,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                      horizontal: Dimens.spacing20, vertical: Dimens.spacing10),
                 )
               ],
             ),
@@ -68,7 +68,7 @@ class DialogAuth {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const Text("Register failed"),
-                const SizedBox(height: Dimens.sp10),
+                const SizedBox(height: Dimens.spacing10),
                 ButtonBase(
                   onPressed: () {
                     Navigator.of(context).pop();
@@ -76,7 +76,7 @@ class DialogAuth {
                   text: "Ok",
                   backgroundColor: ColorApp.red,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                      horizontal: Dimens.spacing20, vertical: Dimens.spacing10),
                 )
               ],
             ),
@@ -93,7 +93,7 @@ class DialogAuth {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const Text("Change password success"),
-                const SizedBox(height: Dimens.sp10),
+                const SizedBox(height: Dimens.spacing10),
                 ButtonBase(
                   onPressed: () {
                     Navigator.of(context)
@@ -105,7 +105,7 @@ class DialogAuth {
                   text: "Ok",
                   backgroundColor: ColorApp.red,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                      horizontal: Dimens.spacing20, vertical: Dimens.spacing10),
                 )
               ],
             ),
@@ -122,7 +122,7 @@ class DialogAuth {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const Text("Change password failed"),
-                const SizedBox(height: Dimens.sp10),
+                const SizedBox(height: Dimens.spacing10),
                 ButtonBase(
                   onPressed: () {
                     Navigator.of(context)
@@ -133,7 +133,7 @@ class DialogAuth {
                   text: "Ok",
                   backgroundColor: ColorApp.red,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: Dimens.sp20, vertical: Dimens.sp10),
+                      horizontal: Dimens.spacing20, vertical: Dimens.spacing10),
                 )
               ],
             ),

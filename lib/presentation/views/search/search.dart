@@ -4,10 +4,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:libs_text_field/libs_text_field.dart';
-import 'package:softbase/config/routes/app_router.dart';
-import 'package:softbase/presentation/cubits/search/search_cubit.dart';
-import 'package:softbase/presentation/cubits/search/search_state.dart';
+import 'package:softbase/app_router.dart';
 import 'package:softbase/presentation/views/base/base_screen.dart';
+import 'package:softbase/presentation/views/search/search_cubit.dart';
+import 'package:softbase/presentation/views/search/search_state.dart';
 import 'package:softbase/presentation/widgets/button_base.dart';
 import 'package:softbase/presentation/widgets/list_view_base.dart';
 import '../../../utils/constains/export.dart';
@@ -27,15 +27,15 @@ class SearchWidget extends StatelessWidget {
             },
             child: Container(
               padding: const EdgeInsets.symmetric(
-                  horizontal: Dimens.sp10, vertical: Dimens.sp8),
+                  horizontal: Dimens.spacing10, vertical: Dimens.spacing9),
               margin: const EdgeInsets.symmetric(
-                  horizontal: Dimens.sp15, vertical: Dimens.sp20),
+                  horizontal: Dimens.spacing15, vertical: Dimens.spacing20),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(8)),
               child: Row(
                 children: <Widget>[
                   const Icon(Icons.search_outlined),
-                  const SizedBox(width: Dimens.sp5),
+                  const SizedBox(width: Dimens.spacing5),
                   const Expanded(
                     child: Text("Tìm kiếm...",
                         style: TextStyle(color: Colors.black)),
@@ -58,7 +58,7 @@ class SearchWidget extends StatelessWidget {
               children: [
                 Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: Dimens.sp10, vertical: Dimens.sp8),
+                        horizontal: Dimens.spacing10, vertical: Dimens.spacing9),
                     child:
                         const Icon(Icons.shopping_cart, color: Colors.black)),
                 Container(
@@ -112,7 +112,7 @@ class _SearchScreenState extends State<SearchScreen> {
           Container(
             color: Colors.pink.withOpacity(0.5),
             padding: const EdgeInsets.fromLTRB(
-                Dimens.sp8, Dimens.sp15, Dimens.sp8, Dimens.sp15),
+                Dimens.spacing9, Dimens.spacing15, Dimens.spacing9, Dimens.spacing15),
             child: SafeArea(
               child: Row(
                 children: <Widget>[
@@ -121,9 +121,9 @@ class _SearchScreenState extends State<SearchScreen> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      padding: const EdgeInsets.only(right: Dimens.sp8),
-                      height: Dimens.sp40,
-                      width: Dimens.sp42,
+                      padding: const EdgeInsets.only(right: Dimens.spacing9),
+                      height: Dimens.spacing40,
+                      width: Dimens.spacing46,
                       child: const Icon(Icons.arrow_back, color: Colors.white),
                     ),
                   ),
@@ -131,7 +131,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: ColorApp.white,
-                          borderRadius: BorderRadius.circular(Dimens.sp4)),
+                          borderRadius: BorderRadius.circular(Dimens.spacing4)),
                       child: Row(
                         children: <Widget>[
                           Expanded(
@@ -140,7 +140,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             focusNode: _focusNode,
                             hintText: "Search",
                             onBorder: false,
-                            height: Dimens.sp40,
+                            height: Dimens.spacing40,
                             onChanged: (value) {
                               BlocProvider.of<SearchCubit>(context)
                                   .searchTitle(text: value);
@@ -152,22 +152,22 @@ class _SearchScreenState extends State<SearchScreen> {
                             },
                           )),
                           Container(
-                            height: Dimens.sp40,
+                            height: Dimens.spacing40,
                             color: ColorApp.transparent,
                             padding: const EdgeInsets.symmetric(
-                                vertical: Dimens.sp3, horizontal: Dimens.sp8),
+                                vertical: Dimens.spacing3, horizontal: Dimens.spacing9),
                             child: Icon(Icons.camera_alt_outlined,
                                 color: ColorApp.black.withOpacity(0.6)),
                           ),
                           Container(
-                            height: Dimens.sp38,
+                            height: Dimens.spacing32,
                             padding: const EdgeInsets.symmetric(
-                                vertical: Dimens.sp3, horizontal: Dimens.sp11),
-                            margin: const EdgeInsets.all(Dimens.sp1),
+                                vertical: Dimens.spacing9, horizontal: Dimens.spacing10),
+                            margin: const EdgeInsets.all(Dimens.spacing2),
                             decoration: BoxDecoration(
                                 color: Colors.pink.withOpacity(0.5),
                                 borderRadius: const BorderRadius.horizontal(
-                                    right: Radius.circular(Dimens.sp3))),
+                                    right: Radius.circular(Dimens.spacing3))),
                             child:
                                 const Icon(Icons.search, color: ColorApp.white),
                           )
@@ -284,20 +284,20 @@ class _HistorySearch extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: Dimens.sp15, vertical: Dimens.sp7),
+                    horizontal: Dimens.spacing15, vertical: Dimens.spacing7),
                 child: Row(
                   children: <Widget>[
                     Expanded(
                       child: Text(history[index],
                           style: const TextStyle(
                               color: Colors.black,
-                              fontSize: Dimens.sp14,
+                              fontSize: Dimens.spacing14,
                               overflow: TextOverflow.ellipsis)),
                     ),
-                    const SizedBox(width: Dimens.sp20),
+                    const SizedBox(width: Dimens.spacing20),
                     Container(
-                      width: Dimens.sp30,
-                      height: Dimens.sp30,
+                      width: Dimens.spacing30,
+                      height: Dimens.spacing30,
                       color: Colors.red,
                     )
                   ],

@@ -1,9 +1,10 @@
+import 'package:injectable/injectable.dart';
 import 'package:softbase/data/datasources/local/local_storage.dart';
 import 'package:softbase/data/di/injector.dart';
-import 'package:softbase/presentation/cubits/base/base_cubit.dart';
-import 'package:softbase/presentation/cubits/search/search_state.dart';
+import 'package:softbase/presentation/views/base/base_cubit.dart';
+import 'package:softbase/presentation/views/search/search_state.dart';
 
-
+@singleton
 class SearchCubit extends BaseCubit<SearchState> {
   SearchCubit() : super(const SearchInit());
 

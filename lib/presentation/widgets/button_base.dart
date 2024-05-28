@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:softbase/config/routes/app_router.dart';
+import 'package:softbase/app_router.dart';
 import '../../data/di/injector.dart';
 import '../../utils/constains/export.dart';
-import '../cubits/login/login_cubit.dart';
+import '../views/auth/login/login_cubit.dart';
 
 class ButtonBase extends StatelessWidget {
   final String? text;
@@ -107,7 +107,7 @@ class TextButtonBase extends StatelessWidget {
       child: Container(
         color: ColorApp.transparent,
         padding: const EdgeInsets.symmetric(
-            vertical: Dimens.sp4, horizontal: Dimens.sp12),
+            vertical: Dimens.spacing4, horizontal: Dimens.spacing12),
         child: Text(text, style: textStyle),
       ),
     );

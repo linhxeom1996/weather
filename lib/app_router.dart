@@ -6,8 +6,8 @@ import 'package:softbase/presentation/views/auth/otp/otp.dart';
 import 'package:softbase/presentation/views/auth/register/register.dart';
 import 'package:softbase/presentation/views/bottom/bottom_view.dart';
 import 'package:softbase/presentation/views/search/search.dart';
-import '../../presentation/views/intro/intro.dart';
-import '../../presentation/views/splash/splash.dart';
+import 'presentation/views/intro/intro.dart';
+import 'presentation/views/splash/splash.dart';
 
 class ArchRouters {
   static const splash = "/";

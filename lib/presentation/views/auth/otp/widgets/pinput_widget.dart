@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pinput/pinput.dart';
 import 'package:softbase/presentation/widgets/button_base.dart';
 
@@ -32,7 +33,7 @@ class _PinputWidgetState extends State<PinputWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: Dimens.sp30, bottom: Dimens.sp20),
+      margin: const EdgeInsets.only(top: Dimens.spacing30, bottom: Dimens.spacing20),
       width: double.infinity,
       alignment: Alignment.center,
       child: Column(
@@ -47,7 +48,7 @@ class _PinputWidgetState extends State<PinputWidget> {
                 border: Border(
                   bottom: BorderSide(
                     color: ColorApp.color18C,
-                    width: Dimens.sp1,
+                    width: Dimens.spacing2,
                   ),
                 ),
               ),
@@ -57,7 +58,7 @@ class _PinputWidgetState extends State<PinputWidget> {
           ),
           Padding(
             padding:
-                const EdgeInsets.only(top: Dimens.sp15, bottom: Dimens.sp5),
+                const EdgeInsets.only(top: Dimens.spacing15, bottom: Dimens.spacing5),
             child: Text("Chưa nhận được mã OTP?",
                 style: Theme.of(context).textTheme.bodyMedium),
           ),

@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:softbase/config/routes/app_router.dart';
+import 'package:softbase/app_router.dart';
 
 import '../../../domain/views/intro/intro_model.dart';
 import '../../../utils/constains/export.dart';
@@ -44,7 +44,7 @@ class _IntroPageState extends State<IntroPage> {
           color: Theme.of(context).colorScheme.onBackground,
           width: double.infinity,
           height: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20),
+          padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -69,7 +69,7 @@ class _IntroPageState extends State<IntroPage> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
-                                top: Dimens.sp25, bottom: Dimens.sp12),
+                                top: Dimens.spacing25, bottom: Dimens.spacing12),
                             child: Text(_listItems[index].title,
                                 style: Theme.of(context).textTheme.titleLarge),
                           ),
@@ -88,7 +88,7 @@ class _IntroPageState extends State<IntroPage> {
                   children: List.generate(_listItems.length, (index) {
                     return AnimatedContainer(
                       margin:
-                          EdgeInsets.only(right: index == 2 ? 0 : Dimens.sp5),
+                          EdgeInsets.only(right: index == 2 ? 0 : Dimens.spacing5),
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInCubic,
                       height: 12,
@@ -116,7 +116,7 @@ class _IntroPageState extends State<IntroPage> {
                 textStyle: Theme.of(context).textTheme.headlineMedium,
                 backgroundColor: ColorApp.color4F1,
                 padding: const EdgeInsets.symmetric(
-                    horizontal: Dimens.sp50, vertical: Dimens.sp20),
+                    horizontal: Dimens.spacing50, vertical: Dimens.spacing20),
               )
             ],
           ),

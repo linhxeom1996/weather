@@ -1,6 +1,9 @@
-import 'package:softbase/presentation/cubits/base/base_cubit.dart';
-import 'package:softbase/presentation/cubits/forgot_pass/forgot_pass_state.dart';
+import 'package:injectable/injectable.dart';
+import 'package:softbase/presentation/views/base/base_cubit.dart';
 
+import 'forgot_pass_state.dart';
+
+@singleton
 class ForgotPassCubit extends BaseCubit<ForgotPassState> {
   ForgotPassCubit() : super(const ForgotPassState());
 

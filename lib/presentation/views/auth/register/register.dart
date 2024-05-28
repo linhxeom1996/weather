@@ -5,7 +5,7 @@ import 'package:softbase/presentation/widgets/button_base.dart';
 import 'package:softbase/presentation/widgets/divider_base.dart';
 import 'package:softbase/presentation/widgets/list_view_base.dart';
 
-import '../../../../config/routes/app_router.dart';
+import '../../../../app_router.dart';
 import '../../../../utils/constains/export.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -37,23 +37,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: Dimens.sp20),
+        padding: const EdgeInsets.symmetric(horizontal: Dimens.spacing20),
         color: ColorApp.white,
         child: ScrollViewBase(
             child: Column(
           children: <Widget>[
-            const SizedBox(height: Dimens.sp20),
+            const SizedBox(height: Dimens.spacing20),
             TextFieldBase(
                 hintText: "Email/phone", controller: _userNameController),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: Dimens.sp15),
+              padding: const EdgeInsets.symmetric(vertical: Dimens.spacing15),
               child: PassTextField(
                   hintText: "Password", controller: _passController),
             ),
             PassTextField(
                 hintText: "Password again", controller: _confirmPassController),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: Dimens.sp20),
+              padding: const EdgeInsets.symmetric(vertical: Dimens.spacing20),
               child: ButtonBase(
                 onPressed: () {
                   Navigator.of(context).pushNamed(ArchRouters.otpScreen,
@@ -72,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: DividerBase(),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Dimens.sp10),
+                    padding: EdgeInsets.symmetric(horizontal: Dimens.spacing10),
                     child: Text("or"),
                   ),
                   Expanded(
