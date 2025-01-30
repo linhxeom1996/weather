@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "541179140313",
-    "project_id": "softbase-83f30",
-    "storage_bucket": "softbase-83f30.appspot.com"
+    "project_number": "601738736484",
+    "project_id": "weather-e3e91",
+    "storage_bucket": "weather-e3e91.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:541179140313:android:0b8c756de8110f7a6c46c8",
+        "mobilesdk_app_id": "1:601738736484:android:2976a30aa8a05af149c071",
         "android_client_info": {
-          "package_name": "com.example.softbase"
+          "package_name": "com.synex.weather"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDyV1b7MN2JGLkWrM9Q_QKE1TbxXC0pzac"
+          "current_key": "AIzaSyBxyXgIsdE3ms0sz9Ovoekphzb6QBvJByw"
         }
       ],
       "services": {

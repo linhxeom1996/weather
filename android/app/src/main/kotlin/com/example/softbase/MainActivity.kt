@@ -1,4 +1,4 @@
-package com.example.softbase
+package com.synex.weather
 
 import io.flutter.embedding.android.FlutterActivity
 
