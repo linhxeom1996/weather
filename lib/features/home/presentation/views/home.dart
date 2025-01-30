@@ -16,6 +16,7 @@ class _HomeScreenState
 
   @override
   void initState() {
+    cubit.init();
     super.initState();
   }
 

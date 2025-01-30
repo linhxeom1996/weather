@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:softbase/core/local_storage/local_storage.dart';
 import 'package:softbase/features/widgets/image_widget.dart';
 
 import '../../core/constants/export.dart';
-import '../../core/di/injector.dart';
 import '../../core/utils/router/app_router.dart';
 
 class SplashPage extends StatefulWidget {
@@ -22,11 +20,7 @@ class _SplashPageState extends State<SplashPage> {
       fetchInitData(),
     ]).whenComplete(() {
       Timer(const Duration(milliseconds: 500), () {
-        Navigator.pushReplacementNamed(
-            context,
-            !getIt.get<LocalStorage>().isFirstOpen
-                ? ArchRouters.home
-                : ArchRouters.intro);
+        Navigator.pushReplacementNamed(context, ArchRouters.home);
       });
     });
     super.initState();

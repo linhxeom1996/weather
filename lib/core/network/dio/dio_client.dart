@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:softbase/core/commundomain/based_api_result/api_result_model.dart';
+
+import '../../commundomain/based_api_result/error_result_model.dart';
 
 @singleton
 class DioClient {
@@ -7,7 +10,7 @@ class DioClient {
 
   DioClient() {
     dio = Dio(BaseOptions(
-      baseUrl: 'https://api.example.com',
+      baseUrl: 'https://api.open-meteo.com/v1',
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 15),
     ));
@@ -30,31 +33,97 @@ class DioClient {
     ));
   }
 
-  Future<Response> get(
-    String url, {
+  Future<ApiResultModel<T>> get<T>(
+    String endpoint, {
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? headers,
-    String? path,
-    CancelToken? cancelToken,
-    ProgressCallback? onReceiveProgress,
-    bool isRetry = false,
-    bool isShowError = false,
-    bool isTranformData = true,
-    bool isAuth = true,
-    bool isProvinceHeader = true,
+    dynamic data,
   }) async {
     try {
-      return await dio.get(url);
+      final response = await dio.get(
+        endpoint,
+        data: data,
+        queryParameters: queryParameters,
+        options: Options(
+          headers: {
+            ...?headers,
+          },
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        return ApiResultModel.success(
+          data: response.data,
+        );
+      } else {
+        return ApiResultModel.failure(
+          errorResultEntity: ErrorResultModel(
+            message: 'Unexpected error',
+            statusCode: response.statusCode,
+          ),
+        );
+      }
     } catch (e) {
-      rethrow;
+      if (e is DioException) {
+        return ApiResultModel.failure(
+          errorResultEntity: ErrorResultModel(
+            message: e.message ?? 'Dio error',
+            statusCode: e.response?.statusCode,
+          ),
+        );
+      }
+      return const ApiResultModel.failure(
+        errorResultEntity: ErrorResultModel(
+          message: 'Unknown error',
+        ),
+      );
     }
   }
 
-  Future<Response> post(String url, dynamic data) async {
+  Future<ApiResultModel<T>> post<T>(
+    String url, {
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    dynamic data,
+  }) async {
     try {
-      return await dio.post(url, data: data);
+      final response = await dio.post(
+        url,
+        data: data,
+        queryParameters: queryParameters,
+        options: Options(
+          headers: {
+            ...?headers,
+          },
+        ),
+      );
+
+      if (response.statusCode == 200) {
+        return ApiResultModel.success(
+          data: response.data,
+        );
+      } else {
+        return ApiResultModel.failure(
+          errorResultEntity: ErrorResultModel(
+            message: 'Unexpected error',
+            statusCode: response.statusCode,
+          ),
+        );
+      }
     } catch (e) {
-      rethrow;
+      if (e is DioException) {
+        return ApiResultModel.failure(
+          errorResultEntity: ErrorResultModel(
+            message: e.message ?? 'Dio error',
+            statusCode: e.response?.statusCode,
+          ),
+        );
+      }
+      return const ApiResultModel.failure(
+        errorResultEntity: ErrorResultModel(
+          message: 'Unknown error',
+        ),
+      );
     }
   }
 }
