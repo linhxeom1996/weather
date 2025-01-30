@@ -50,6 +50,7 @@ dependencies:
   dio: ^5.2.1+1
   floor: ^1.4.1
   awesome_dio_interceptor: ^1.0.0
+  connectivity_plus: ^5.0.1
 
   #other
   oktoast: ^3.3.1
@@ -61,7 +62,9 @@ dependencies:
   audio_video_progress_bar: ^1.0.1
   rxdart: ^0.27.4
   gradient_like_css: ^1.0.1
-
+  json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.2
+  flutter_riverpod: ^2.4.5
 
   libs_text_field:
     path: ../libs_text_field
@@ -84,6 +87,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   injectable_generator: ^2.1.6
   copy_with_extension_gen: ^5.0.0
+  json_serializable: ^6.7.1
+  freezed: ^2.5.2
 
 flutter:
   uses-material-design: true

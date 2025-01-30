@@ -5,13 +5,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:softbase/data/datasources/local/local_storage.dart';
-import 'package:softbase/data/di/injector.dart';
-import 'package:softbase/presentation/views/theme_manager/theme_manager.dart';
-import 'package:softbase/utils/constains/themes.dart';
+import 'package:softbase/core/local_storage/local_storage.dart';
+import 'package:softbase/core/theme/theme_manager.dart';
+import 'package:softbase/core/theme/themes.dart';
 
-import 'app_router.dart';
-import 'data/datasources/firebase/remote_config/remote_config_manager.dart';
+import 'core/di/injector.dart';
+import 'core/utils/router/app_router.dart';
+import 'core/network/firebase/remote_config/remote_config_manager.dart';
 
 void main() {
   runZonedGuarded(() async {
