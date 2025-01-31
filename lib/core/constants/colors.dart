@@ -37,7 +37,7 @@ class AppColorScheme {
   factory AppColorScheme.light() => AppColorScheme(
       primary: const Color(0xFFF3F6FB),
       btnColor: ColorApp.buttonViolet,
-      textColor: const Color(0xFF4E586B),
+      textColor: Colors.white,
       textBtnColor: Colors.white,
       cardColor: Colors.white,
       buttonColor: const Color(0xFFFFFFFF),
@@ -47,7 +47,8 @@ class AppColorScheme {
       cardCastColor: linearGradient(180, ['#FFFFFF 0%', '#F1F6FC 100%']),
       titleCastItemColor: const Color(0xFF403761),
       borderCastItemColor: Colors.white.withOpacity(0.71),
-      bgDiscoverColor: const LinearGradient(colors: [Color(0xFFF3F6FB), Color(0xFFF3F6FB)]),
+      bgDiscoverColor:
+          const LinearGradient(colors: [Color(0xFFF3F6FB), Color(0xFFF3F6FB)]),
       iconControllerColor: const Color(0xFF403761),
       cardSettingColor: const Color(0xFFDBDBDB));
 
@@ -74,6 +75,7 @@ class ColorApp {
   static const Color white = Colors.white;
   static const Color red = Colors.red;
   static const Color grey = Colors.grey;
+  static const Color yellow = Colors.yellow;
   static const Color transparent = Colors.transparent;
 
   static const Color color1E1 = Color(0xffE1E1E1);
@@ -90,7 +92,6 @@ class ColorApp {
   static const Color colorE9E = Color.fromARGB(255, 49, 3, 3);
 
   static const buttonViolet = Color(0xFF5B35FF);
-
 
   static Color parseColor(String color) {
     String hex = color.replaceAll("#", "");

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:softbase/core/utils/router/app_router.dart';
 import '../../core/constants/export.dart';
 class ButtonBase extends StatelessWidget {
   final String? text;
@@ -111,25 +110,25 @@ class TextButtonBase extends StatelessWidget {
   }
 }
 
-class LoginRequiredWidget extends StatelessWidget {
-  final Function onTab;
-  final Widget child;
-  const LoginRequiredWidget(
-      {super.key, required this.onTab, required this.child});
+// class LoginRequiredWidget extends StatelessWidget {
+//   final Function onTab;
+//   final Widget child;
+//   const LoginRequiredWidget(
+//       {super.key, required this.onTab, required this.child});
 
-  @override
-  Widget build(BuildContext context) {
-    // var isLogin = getIt<LoginCubit>().state.isLoginned ?? false;
-    var isLogin = true;
-    return GestureDetector(
-      onTap: () {
-        if (isLogin) {
-          onTab();
-        } else {
-          Navigator.of(context).pushNamed(ArchRouters.login);
-        }
-      },
-      child: child,
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     // var isLogin = getIt<LoginCubit>().state.isLoginned ?? false;
+//     var isLogin = true;
+//     return GestureDetector(
+//       onTap: () {
+//         if (isLogin) {
+//           onTab();
+//         } else {
+//           Navigator.of(context).pushNamed(ArchRouters.login);
+//         }
+//       },
+//       child: child,
+//     );
+//   }
+// }

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../core/constants/export.dart';
-
 class ImageWidget extends StatelessWidget {
   final String asset;
   final Color? color;
@@ -49,15 +47,15 @@ class NetWorkImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget loading = Image.asset(IconApp.ic_loading_op1, fit: BoxFit.contain);
-    switch (typeLoading) {
-      case 1:
-        loading = Lottie.asset(IconApp.ic_loading_op2, fit: BoxFit.contain);
-        break;
-      case 2:
-        loading = Image.asset(IconApp.ic_loading_op3, fit: BoxFit.contain);
-        break;
-    }
+    // Widget loading = Image.asset(IconApp.ic_loading_op1, fit: BoxFit.contain);
+    // switch (typeLoading) {
+    //   case 1:
+    //     loading = Lottie.asset(IconApp.ic_loading_op2, fit: BoxFit.contain);
+    //     break;
+    //   case 2:
+    //     loading = Image.asset(IconApp.ic_loading_op3, fit: BoxFit.contain);
+    //     break;
+    // }
     return CachedNetworkImage(
       imageUrl: imageUrl,
       filterQuality: FilterQuality.low,
@@ -66,10 +64,10 @@ class NetWorkImageWidget extends StatelessWidget {
             image: DecorationImage(image: image, fit: BoxFit.fill)),
       ),
       placeholder: (context, url) => Container(
-        child: loading,
+        // child: loading,
       ),
       errorWidget: (context, url, error) => Container(
-        child: loading,
+        // child: loading,
       ),
     );
   }
