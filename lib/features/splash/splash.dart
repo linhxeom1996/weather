@@ -1,11 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:softbase/core/local_storage/local_storage.dart';
-import 'package:softbase/features/widgets/image_widget.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:softbase/core/utils/extensions/context_ext.dart';
 
 import '../../core/constants/export.dart';
-import '../../core/di/injector.dart';
 import '../../core/utils/router/app_router.dart';
 
 class SplashPage extends StatefulWidget {
@@ -18,16 +17,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Future.wait([
-      fetchInitData(),
-    ]).whenComplete(() {
-      Timer(const Duration(milliseconds: 500), () {
-        Navigator.pushReplacementNamed(
-            context,
-            !getIt.get<LocalStorage>().isFirstOpen
-                ? ArchRouters.home
-                : ArchRouters.intro);
-      });
+    Timer(const Duration(milliseconds: 500), () {
+      Navigator.pushReplacementNamed(context, ArchRouters.home);
     });
     super.initState();
   }
@@ -35,35 +26,24 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            alignment: Alignment.center,
-            color: ColorApp.color1E1,
-            child: ImageWidget(
-              asset: IconApp.img_splash,
-              width: Dimens().size(context).width / 3,
-            ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        alignment: Alignment.center,
+        color: ColorApp.yellow,
+        child: GradientText(
+          "WeatherNow",
+          colors: [
+            ColorApp.color4F1,
+            ColorApp.color18C.withOpacity(0.7),
+          ],
+          gradientType: GradientType.linear,
+          style: context.myTheme.textThemeT1.body.copyWith(
+            fontSize: 38,
+            fontWeight: FontWeight.w700,
           ),
-          Container(
-            height: Dimens.spacing5,
-            width: Dimens().size(context).width / 3,
-            margin: const EdgeInsets.only(bottom: Dimens.spacing20),
-            decoration: BoxDecoration(
-                color: ColorApp.black,
-                borderRadius: BorderRadius.circular(Dimens.spacing24)),
-          )
-        ],
-      )),
+        ),
+      ),
     );
-  }
-
-  Future<bool> fetchInitData() async {
-    //fetch init data for app
-    return true;
   }
 }

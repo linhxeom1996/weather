@@ -65,6 +65,7 @@ dependencies:
   json_annotation: ^4.8.1
   freezed_annotation: ^2.4.2
   flutter_riverpod: ^2.4.5
+  simple_gradient_text: ^1.2.4
 
   libs_text_field:
     path: ../libs_text_field
@@ -89,6 +90,14 @@ dev_dependencies:
   copy_with_extension_gen: ^5.0.0
   json_serializable: ^6.7.1
   freezed: ^2.5.2
+
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/constants/
+  filename: app_assets.dart
+  field_prefix:
+  classname: AppAssets
+  ignore_comments: true
 
 flutter:
   uses-material-design: true
